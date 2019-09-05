@@ -1,13 +1,13 @@
 import React from "react";
 
-const cell = props => {
-  //css class to render if a cell lit from props
+import "./Cell.css";
 
-  return (
-    <div>
-      <h1>This is a cell</h1>
-    </div>
-  );
+const Cell = props => {
+  const handleclick = () => {
+    props.flipSurroundingCells();
+  };
+  let classes = "cell" + (props.isLit ? "cell-lit" : "");
+  return <td className={classes} onClick={handleclick} />;
 };
 
-export default cell;
+export default Cell;
