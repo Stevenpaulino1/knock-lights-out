@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
-import Cell from "./Cell";
-
+import Cell from "../Cell/Cell";
 import "./Board.css";
 
 class Board extends Component {
@@ -24,10 +22,11 @@ class Board extends Component {
     return board;
   }
 
-  // flipSurroundingCells = coordinates => {
+  // flipCellsAround(coord) {
   //   let { ncols, nrows } = this.props;
   //   let board = this.state.board;
   //   let [y, x] = coord.split("-").map(Number);
+  //
   //   function flipCell(y, x) {
   //     // if this coord is actually on board, flip it
   //
@@ -36,8 +35,15 @@ class Board extends Component {
   //     }
   //   }
   //
-  //   this.setState({ board, hasWonGame });
-  // };
+  //   // TODO: flip this cell and the cells around it
+  //
+  //   // win when every cell is turned off
+  //   // TODO: determine is the game has been won
+  //
+  //   this.setState({ board, hasWon });
+  // }
+
+  /** Render game board or winning message. */
 
   render() {
     let tableBoard = [];
@@ -58,7 +64,6 @@ class Board extends Component {
     );
   }
 }
-
 Board.defaultProps = {
   numRows: 5,
   numCols: 5,
