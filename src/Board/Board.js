@@ -84,7 +84,9 @@ class Board extends Component {
           )}
         </table>
         {this.state.hasWonGame ? null : (
-          <button onClick={this.handleReset}>Reset</button>
+          <button className="Button" onClick={this.handleReset}>
+            Reset
+          </button>
         )}
       </React.Fragment>
     );
