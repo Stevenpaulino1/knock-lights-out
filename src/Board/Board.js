@@ -41,11 +41,15 @@ class Board extends Component {
     if (x >= 0 && x < numCols && y >= 0 && y < numRows) {
       board[y][x] = !board[y][x];
     }
-    let hasWonGame = false;
-    console.log("BOARD NOW", board);
+    let hasWonGame = board.every(row => row.every(cell => !cell));
+
+    // console.log("BOARD NOW", board);
+
     this.setState({ board, hasWonGame });
   }
-
+  handleReset = () => {
+    this.setState({ board: this.createBoard() });
+  };
   /** Render game board or winning message. */
 
   render() {
@@ -67,9 +71,18 @@ class Board extends Component {
     // console.log("state", this.state);
 
     return (
-      <table className="Board">
-        <tbody>{tableBoard}</tbody>
-      </table>
+      <React.Fragment>
+        <table className="Board">
+          {this.state.hasWonGame ? (
+            <h1>"You won!"</h1>
+          ) : (
+            <tbody>{tableBoard}</tbody>
+          )}
+        </table>
+        {this.state.hasWonGame ? null : (
+          <button onClick={this.handleReset}>Reset</button>
+        )}
+      </React.Fragment>
     );
   }
 }
@@ -78,5 +91,7 @@ Board.defaultProps = {
   numCols: 5,
   chanceLightsOn: 0.25
 };
+
+// allow user to chooese difficulty// size of board
 
 export default Board;
