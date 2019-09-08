@@ -5,7 +5,8 @@ import "./Board.css";
 class Board extends Component {
   state = {
     hasWonGame: false,
-    board: this.createBoard()
+    board: this.createBoard(),
+    numMoves: 0
   };
 
   createBoard() {
@@ -23,7 +24,7 @@ class Board extends Component {
   }
 
   flipCellsAround(coord) {
-    console.log("FLIPPING", coord);
+    // console.log("FLIPPING", coord);
     let { numCols, numRows } = this.props;
     let board = this.state.board;
     let [y, x] = coord.split("-").map(Number);
@@ -36,23 +37,25 @@ class Board extends Component {
   }
 
   flipCell(board, y, x, numCols, numRows) {
-    console.log("BOARD?", y, x, board);
+    // console.log("BOARD?", y, x, board);
 
     if (x >= 0 && x < numCols && y >= 0 && y < numRows) {
       board[y][x] = !board[y][x];
     }
     let hasWonGame = board.every(row => row.every(cell => !cell));
+    let numMoves = this.state.numMoves + 1;
 
     // console.log("BOARD NOW", board);
 
-    this.setState({ board, hasWonGame });
+    this.setState({ board, hasWonGame, numMoves });
   }
   handleReset = () => {
-    this.setState({ board: this.createBoard() });
+    this.setState({ board: this.createBoard(), numMoves: 0 });
   };
   /** Render game board or winning message. */
 
   render() {
+    console.log(this.state.numMoves);
     let tableBoard = [];
     for (let y = 0; y < this.props.numRows; y++) {
       let row = [];
@@ -72,6 +75,7 @@ class Board extends Component {
 
     return (
       <React.Fragment>
+        <h3>Number of Moves: {this.state.numMoves}</h3>
         <table className="Board">
           {this.state.hasWonGame ? (
             <h1>"You won!"</h1>
