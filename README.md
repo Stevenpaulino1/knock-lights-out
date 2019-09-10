@@ -2,18 +2,12 @@
 
 Based on the classic game Lights out
 
-## Available Scripts
+##Live: https://stevenpaulino1.github.io/knock-lights-out/
 
-In the project directory, you can run:
+- The game consists of a 5 by 5 grid of lights. When the game starts, a random number or a stored pattern of these lights is switched on. Pressing any of the lights will toggle it and the surrounding adjacent lights. The goal of the puzzle is to switch all the lights off, preferably in as few button presses as possible.
 
-### `npm start`
+###Next Steps:
 
-Runs the app in the development mode.<br>
-
-### `npm test`
-
-### `npm run build`
-
-### `npm run build` fails to minify
-
-# knock-lights-out
+- Keep a database of scores and users
+- Improve mobile experience
+- Allow user to choose various sized grids
