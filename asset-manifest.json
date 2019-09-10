@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/knock-lights-out/static/css/main.0a4fed35.chunk.css",
+    "main.js": "/knock-lights-out/static/js/main.be4102e4.chunk.js",
+    "main.js.map": "/knock-lights-out/static/js/main.be4102e4.chunk.js.map",
+    "runtime~main.js": "/knock-lights-out/static/js/runtime~main.bd245cb0.js",
+    "runtime~main.js.map": "/knock-lights-out/static/js/runtime~main.bd245cb0.js.map",
+    "static/js/2.f30ee633.chunk.js": "/knock-lights-out/static/js/2.f30ee633.chunk.js",
+    "static/js/2.f30ee633.chunk.js.map": "/knock-lights-out/static/js/2.f30ee633.chunk.js.map",
+    "index.html": "/knock-lights-out/index.html",
+    "precache-manifest.48aec2f96ec619b59a71aa49715d755a.js": "/knock-lights-out/precache-manifest.48aec2f96ec619b59a71aa49715d755a.js",
+    "service-worker.js": "/knock-lights-out/service-worker.js",
+    "static/css/main.0a4fed35.chunk.css.map": "/knock-lights-out/static/css/main.0a4fed35.chunk.css.map"
+  }
+}
